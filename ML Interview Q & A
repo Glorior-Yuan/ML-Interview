@@ -1,7 +1,8 @@
-ML Q & A interview prep:
-ML Algoritms + Basic ML
+# ML Q & A interview prep:
 
-Q: What are the various types of ML?
+## ML Algoritms + Basic ML
+
+Q: What are the various types of ML? 
 
 A: Supervised (labeled data) , Unsupervised (unlabeled data) , Reinforcement (using penalty and reward)
 
@@ -11,7 +12,10 @@ A: Open-ended
 
 Q: What is the difference between ML, DL and AI?
 
-A: - AI involves machines that can perform tasks that are characteristic of human intelligence ML is a way of achieving AI by “training” an algorithm so that it can learn data. Deep learning is one of many approaches to machine learning, which uses Neural Networks that mimic the biological structure of the brain. Another difference is the feature extraction and classification are separate steps for ML but are a single NN for DL.
+A: - AI involves machines that can perform tasks that are characteristic of human intelligence
+ML is a way of achieving AI by “training” an algorithm so that it can learn data.
+Deep learning is one of many approaches to machine learning, which uses Neural Networks that mimic the biological structure of the brain. 
+Another difference is the feature extraction and classification are separate steps for ML but are a single NN for DL.
 
 Q: Talk about a recent ML paper that you’ve read in 2 minutes.
 
@@ -25,13 +29,16 @@ The ROC curve is a graphical representation of the contrast between true positiv
 
 Q: Explain TP/FP/FN/TN in a simple example:
 
-A: - Fire alarm goes off + fire = TP Fire alarm goes off + no fire = FP Fire alarm doesn’t go off + fire = FN Fire alarm doesn’t go off + no fire = TN
+A: - Fire alarm goes off + fire = TP
+Fire alarm goes off + no fire = FP
+Fire alarm doesn’t go off + fire = FN
+Fire alarm doesn’t go off + no fire = TN
 
 Q: What is Bayes Theorem?
 
 A: Essentially Bayes Theorem gives you a probability of an event given what is known as prior knowledge, Prob = TP/ All positives(TP+FP).
 
-Q: Why is “Naive” Bayes naive?
+Q: Why is “Naive” Bayes naive? 
 
 A: NB makes the naive assumption that the features in a dataset are independent of each other, which isn’t applicable to real-world datasets.
 
@@ -45,7 +52,7 @@ A: Pruning is what happens in decision trees when branches that have weak predic
 
 Reduced error pruning is perhaps the simplest version: replace each node. If it doesn’t decrease predictive accuracy, keep it pruned. While simple, this heuristic actually comes pretty close to an approach that would optimize for maximum accuracy.
 
-Q: What is the difference between Gini Impurity and Entropy in a decision tree?
+Q: What is the difference between Gini Impurity and Entropy in a decision tree? 
 
 A: While both are metrics to decide how to split a tree, Gini measurement is the probability of a random sample being classified correctly by randomly picking a label from the branch. In information theory Entropy is the measured lack of information in a system and you calculate gain by making a split. This delta entropy tells you about how the uncertainty about the label was reduced. Gini is more common because it doesn’t require the log calculations that Entropy takes.
 
@@ -91,7 +98,7 @@ A: Dijkstra's algorithm is an algorithm for finding the shortest paths between n
 
 Q: How is KNN different from K-means clustering?
 
-A: KNN or K-Nearest Neighbors is a supervised learning method technique used from classification or regression and does not require training. K-means is an unsupervised clustering algorithm fitting to K-clusters.
+A: KNN or K-Nearest Neighbors is a supervised learning method technique used from classification or regression and does not require training. K-means is an unsupervised clustering algorithm fitting to K-clusters. 
 
 Q: What is ensemble learning?
 
@@ -99,7 +106,7 @@ A: Ensemble techniques use a combination of learning algorithms to optimize bett
 
 Q: What is the difference between bagging and boosting?
 
-A: Both are ensemble models that use random sampling to reduce variance. Bagging models are built independently and better solves the problem of overfitting. Boosting builds on top of old models to create models with less bias, also weights the better performing examples higher, but may overfit.
+A: Both are ensemble models that use random sampling to reduce variance. Bagging models are built independently and better solves the problem of overfitting. Boosting builds on top of old models to create models with less bias, also weights the better performing examples higher, but may overfit. 
 
 Q: How do you go from a decision tree to a random forest? To a Gradient Boosted Tree?
 
@@ -113,12 +120,14 @@ A: A hash table is a data structure like a dictionary in python. A key is mapped
 
 Q: How do you deal with imbalanced data?
 
-A: Collect more data, resample the dataset to correct for imbalances, try difference models or algorithms.
-ML Validation
+A: Collect more data, resample the dataset to correct for imbalances, try difference models or algorithms. 
+
+## ML Validation
 
 Q: Name two ways to evaluate the performance of a classification algorithm.
 
-A: 1) Confusing Matrix ([TN,FP],[FN,TP]) 2) Accuracy (also AUC, F1, MAE, MSE)
+A: 1) Confusing Matrix ([TN,FP],[FN,TP]) 
+     2) Accuracy (also AUC, F1, MAE, MSE)
 
 Q: What’s the difference between Type I and Type II error?
 
@@ -134,15 +143,23 @@ A: We need a cost function to optimize our weights for model performance and I w
 
 Q: How do you ensure you’re not overfitting with a model?
 
-A: 1- Keep the model simpler: reduce variance by taking into account fewer variables and parameters, thereby removing some of the noise in the training data. 2- Use cross-validation techniques such as k-folds cross-validation. 3- Use regularization techniques such as LASSO that penalize certain model parameters if they’re likely to cause overfitting.
+A: 1- Keep the model simpler: reduce variance by taking into account fewer variables and parameters, thereby removing some of the noise in the training data.
+2- Use cross-validation techniques such as k-folds cross-validation.
+3- Use regularization techniques such as LASSO that penalize certain model parameters if they’re likely to cause overfitting.
 
 Q: Explain the cross-validation resampling procedure.
 
 A: The general procedure is as follows:
 
-    Shuffle the dataset randomly.
-    Split the dataset into k groups
-    For each unique group: Take the group as a hold out or test data set Take the remaining groups as a training data set Fit a model on the training set and evaluate it on the test set Retain the evaluation score and discard the model 4)Combine evaluation scores into single average (CV error) 5)Repeat process for different model and choose the one w/ lowest CV error
+1) Shuffle the dataset randomly.
+2) Split the dataset into k groups
+3) For each unique group:
+Take the group as a hold out or test data set
+Take the remaining groups as a training data set
+Fit a model on the training set and evaluate it on the test set
+Retain the evaluation score and discard the model
+4)Combine evaluation scores into single average (CV error)
+5)Repeat process for different model and choose the one w/ lowest CV error
 
 Q: How does evaluating your model differ between using CV or bootstrapping? What is MC-CV?
 
@@ -150,7 +167,8 @@ A: CV tends to be less biased but K-fold CV has fairly large variance. On the ot
 
 Q: What’s the trade-off between bias and variance?
 
-A: Bias is due to overly simplistic assumptions while variance is error due to too much complexity in the learning algorithm you’re using. Bias leads to under-fitting your data and variance leads to overfitting your data. Essentially, if you make the model more complex and add more variables, you’ll lose bias but gain some variance — in order to get the optimally reduced amount of error, you’ll have to tradeoff bias and variance and try your best to minimize each. (In machine learning/statistics as a whole, accuracy vs. precision is analogous to bias vs. variance).
+A: Bias is due to overly simplistic assumptions while variance is error due to too much complexity in the learning algorithm you’re using. Bias leads to under-fitting your data and variance leads to overfitting your data. Essentially, if you make the model more complex and add more variables, you’ll lose bias but gain some variance — in order to get the optimally reduced amount of error, you’ll have to tradeoff bias and variance and try your best to minimize each.
+(In machine learning/statistics as a whole, accuracy vs. precision is analogous to bias vs. variance).
 
 Q: What cross-validation technique would you use on a time series dataset?
 
@@ -158,16 +176,22 @@ A: Instead of using standard k-folds cross-validation, you have to pay attention
 
 You’ll want to do something like forward chaining where you’ll be able to model on past data then look at forward-facing data.
 
-fold 1 : training [1], test [2] fold 2 : training [1 2], test [3] fold 3 : training [1 2 3], test [4] fold 4 : training [1 2 3 4], test [5] fold 5 : training [1 2 3 4 5], test [6]
+fold 1 : training [1], test [2]
+fold 2 : training [1 2], test [3]
+fold 3 : training [1 2 3], test [4]
+fold 4 : training [1 2 3 4], test [5]
+fold 5 : training [1 2 3 4 5], test [6]
 
 Q: What’s the difference between L1 and L2 regularization? How does it solve the problem of overfitting? Which regularizer to use and when?
 
-A: When dealing with a large number of features we no longer want to use CV. Both L1 (Lasso Regression) and L2 (Ridge Regression) regularization techniques are used to address over-fitting and feature selection, the key difference between these two is the penalty term. Lasso Regression (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient while Ridge regression adds “squared magnitude” of coefficient as penalty term to the loss function. The key difference between these techniques is that Lasso is more binary/sparse and shrinks the less important feature’s coefficient to zero thus, removing some feature altogether and L2 regularization tends to spread error among all the term. L1 works well for feature selection in case we have a huge number of features.
-ML Stats
+A: When dealing with a large number of features we no longer want to use CV. Both L1 (Lasso Regression) and L2 (Ridge Regression) regularization techniques are used to address over-fitting and feature selection, the key difference between these two is the penalty term. Lasso Regression (Least Absolute Shrinkage and Selection Operator) adds “absolute value of magnitude” of coefficient while Ridge regression adds “squared magnitude” of coefficient as penalty term to the loss function. 
+The key difference between these techniques is that Lasso is more binary/sparse and shrinks the less important feature’s coefficient to zero thus, removing some feature altogether and L2 regularization tends to spread error among all the term. L1 works well for feature selection in case we have a huge number of features.
+
+## ML Stats
 
 Q: What is a Fourier transform? And why do we use it.
 
-A: Given a smoothie, it’s how we find the recipe (in terms of superposition of symmetric functions). Fourier transforms are used to it’s a extract features from audio signals by converting a signal from time to frequency domain.
+A:  Given a smoothie, it’s how we find the recipe (in terms of superposition of symmetric functions). Fourier transforms are used to it’s a extract features from audio signals by converting a signal from time to frequency domain.
 
 Q: What’s the difference between probability and likelihood?
 
@@ -188,6 +212,14 @@ A: Maximum likelihood estimation is a method that determines values for the para
 Q: When are Maximum Likelihood and Least Squared Error equal?
 
 A: For least squares parameter estimation we want to find the line that minimizes the total squared distance between the data points and the regression line. In maximum likelihood estimation we want to maximize the total probability of the data. When a Gaussian distribution is assumed, the maximum probability is found when the data points get closer to the mean value. Since the Gaussian distribution is symmetric, this is equivalent to minimizing the distance between the data points and the mean value.
-Sources:
 
-Astronomer Amber! https://ml-cheatsheet.readthedocs.io/en/latest/forwardpropagation.html Machine Learning Interview Questions and Answers | Machine Learning Interview Preparation | Edureka https://www.springboard.com/blog/machine-learning-interview-questions/ https://machinelearningmastery.com/k-fold-cross-validation/ https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c https://towardsdatascience.com/support-vector-machine-vs-logistic-regression-94cc2975433f https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1 https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d
+### Sources: 
+Astronomer Amber!
+https://ml-cheatsheet.readthedocs.io/en/latest/forwardpropagation.html
+Machine Learning Interview Questions and Answers | Machine Learning Interview Preparation | Edureka
+https://www.springboard.com/blog/machine-learning-interview-questions/
+https://machinelearningmastery.com/k-fold-cross-validation/
+https://towardsdatascience.com/l1-and-l2-regularization-methods-ce25e7fc831c
+https://towardsdatascience.com/support-vector-machine-vs-logistic-regression-94cc2975433f
+https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1
+https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d
